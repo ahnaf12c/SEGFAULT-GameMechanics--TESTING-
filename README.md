@@ -7,7 +7,7 @@ A lightweight, data-driven 2D room grid engine built in modular Python. This rep
 
 ## 🏗️ Project Architecture & Pipeline
 
-The project uses a strict, bottom-up decoupled dependency hierarchy. Data definitions are completely isolated from execution logic, keeping the engine micro-light (~21 KB) and free of nested conditional logic.
+The project uses a strict, bottom-up decoupled dependency hierarchy. Data definitions are completely isolated from execution logic, keeping the engine light and free of nested conditional logic.
 
 ### Module Breakdown
 
