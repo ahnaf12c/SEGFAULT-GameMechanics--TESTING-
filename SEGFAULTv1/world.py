@@ -1,6 +1,7 @@
 import GameEngine
 import rooms
 import assets
+import objects
 
 matrices = assets.ROOM_MATRICES
 
@@ -13,13 +14,13 @@ entryHub.exits = {
         'E': '02',
         'S': '04'}
 entryHub.interactables = {
-        'Storage': '0001'}
+        'MysteryNote': '0001'}
 entryHub.is_Locked = {
         'N': True,
         'W': False,
         'E': False,
-        'S': False,
-        'Storage': False}
+        'S': False
+        }
 entryHub.keyItems = {
         'redKeycard': 'N'}
 
@@ -28,6 +29,11 @@ storageCloset = rooms.Room("01", "Storage Closet")
 storageCloset.matrix = matrices[storageCloset.ID]
 storageCloset.exits = {
         'E': '00'}
+storageCloset.interactables = {
+        'ST0101': ['Red Keycard'],
+        'ST0102': [],
+        'ST0103': [],
+        'ST0104': []}
 storageCloset.is_Locked = {
         'E': False}
 
@@ -62,3 +68,26 @@ WORLD = {
     securityRoom.ID: securityRoom,
     courtyard.ID: courtyard,
 }
+
+
+"""OBJECTS AND INTERACTABLES IN THE MAP"""
+
+#StorageUnits
+
+unit1 = objects.StorageUnit('ST0101', 'Unit1')
+unit1.location = '01'
+unit1.stores = WORLD[unit1.location].interactables[unit1.ID]
+
+
+#Keycards
+redkeycard = objects.Keycard(assets.ITEMS['redKeycard']['ID'], assets.ITEMS['redKeycard']['name'])
+redkeycard.unlocks['inRoom'] = '00'
+redkeycard.unlocks['object'] = 'N'
+redkeycard.location['inRoom'] = '01'
+redkeycard.location['inWhat'] = 'ST0101'
+
+#Doors
+ehN = objects.Door('N', 'Entry Hub North Door')
+ehN.room = '00'
+ehN.locked = True
+ehN.coordsInRoom = [[0,5], [0,6], [0,7], [0,8]]

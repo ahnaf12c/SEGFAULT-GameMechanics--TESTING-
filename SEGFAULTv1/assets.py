@@ -2,7 +2,7 @@ import sys
 import os
 
 TILES = {
-        0: "\033[48;5;239m. \033[0m",
+        0: "\033[48;5;239m\033[38;5;245m. \033[0m",
         1: f"\033[1;97m\u2593\u2593\033[0m",
         2: f"\033[1;92m\u2593\u2593\033[0m",
         3: f"\033[1;91m\u2593\u2593\033[0m",
@@ -76,12 +76,14 @@ ROOM_MATRICES ={
 ITEMS = {
         'redKeycard': {
             'name': 'Red Keycard',
+            'ID': '0001',
             'description': 'It seems to open something.',
             'keyItem': True
             },
 
         'specialNote': {
             'name': 'Special Note for Stranger',
+            'ID': '0001',
             'description': 'Hello There Stranger! How Are you?',
             'keyItem': False
             }

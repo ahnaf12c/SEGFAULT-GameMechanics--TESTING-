@@ -10,10 +10,10 @@ class Keycard:
         self.name = name
         self.unlocks = {
                 'inRoom': '', #roomID
-                'object': '' #objectID}
+                'object': ''} #objectID
         self.location = {
                 'inRoom': '', #roomID
-                'inWhat': '' #storageID}
+                'inWhat': ''} #storageID
 
 class Terminal:
     def __init__(self, termID, name):
@@ -27,4 +27,18 @@ class StorageUnit:
         self.ID = storageID
         self.name = name
         self.stores = []
-        sel.location = '' #roomID        
+        self.location = '' #roomID
+
+class Door:
+    def __init__(self, doorID, name):
+        self.ID = doorID
+        self.name = name
+        self.room = ''
+        self.locked = False
+        self.coordsInRoom = []
+
+class Note:
+    def __init__(self, noteID, title):
+        self.ID = noteID
+        self.title = title
+        self.text = ''
