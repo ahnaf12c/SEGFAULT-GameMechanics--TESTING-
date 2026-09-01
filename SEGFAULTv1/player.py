@@ -25,15 +25,25 @@ class Player:
 
 
 if __name__ == '__main__':
+    inputs = {
+            'w': 'N',
+            'a': 'W',
+            's': 'S',
+            'd': 'E'}
+
     p = Player()
     p.location = '00'
 
     p.move()
 
     while True:
-        cmd = input('>')
+        cmd = GameEngine.get_char()
 
-        if cmd.upper() == 'Q':
+        if cmd == 'q':
             break
+
+        elif cmd in inputs:
+            mov = inputs[cmd]
         
-        p.move(cmd)
+        time.sleep(0.25)
+        p.move(mov)
