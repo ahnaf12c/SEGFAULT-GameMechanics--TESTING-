@@ -29,6 +29,14 @@ def deleteLastLines(n=1):
 def deleteCurrentLine():
     print("\r\033[K", end = '')
 
+def hideCursor():
+    sys.stdout.write('\033[?25l')
+    sys.stdout.flush()
+
+def showCursor():
+    sys.stdout.write('\033[?25h')
+    sys.stdout.flush()
+
 
 if __name__ == '__main__':
     char = get_char()

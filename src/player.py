@@ -36,14 +36,15 @@ if __name__ == '__main__':
 
     p.move()
 
+    GameEngine.hideCursor()
+
     while True:
         cmd = GameEngine.get_char()
 
         if cmd == 'q':
+            GameEngine.showCursor()
             break
 
         elif cmd in inputs:
-            mov = inputs[cmd]
-        
-        time.sleep(0.25)
-        p.move(mov)
+            p.move(inputs[cmd])
+            time.sleep(0.15)
