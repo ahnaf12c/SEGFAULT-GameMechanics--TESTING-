@@ -91,10 +91,11 @@ ITEMS = {
             }
         }
 
-HELP_TEXT = """
-Available Commands:
-  [N/S/E/W] - Move Direction
+HELP_TEXT = """\033[1;92m
+CONTROLS:
+\033[1;97m
+  [W/A/S/D] - Move Direction
   [L]       - Look / Inspect Room
   [I]       - Open Inventory
   [U]       - Use Item
-"""
+\033[0m"""

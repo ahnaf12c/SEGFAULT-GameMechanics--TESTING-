@@ -7,6 +7,9 @@ import objects
 import GameEngine
 import world
 import player
+import intro
+
+intro.titlePageInput()
 
 wmap = world.WORLD
 
