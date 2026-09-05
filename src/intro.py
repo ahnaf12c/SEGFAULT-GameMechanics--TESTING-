@@ -55,9 +55,8 @@ def titlePageInput():
         i = GameEngine.get_char()
         match i:
             case '1':
-                pass
-                #GameEngine.clearScreen()
-                #break
+                GameEngine.clearScreen()
+                break
             case '2':
                 GameEngine.clearScreen()
                 print(assets.HELP_TEXT)
